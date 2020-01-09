@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "DBFABAA8-5E80-4A51-A982-0CC70E10C7AE"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2FEE70CB-733F-4F59-BCBD-764F4478331F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BreakingBad/Services/BreakingBadApiService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "retrieveModel(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2FEE70CB-733F-4F59-BCBD-764F4478331F - af91e90e14902357"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, BreakingBad.AppError&gt;) -&gt; () in BreakingBad.BreakingBadApiService.retrieveModel(completion: (Swift.Result&lt;Swift.Array&lt;BreakingBad.Character&gt;, BreakingBad.AppError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "BreakingBad"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sumanchatterjee/BreakingBad/BreakingBad/BreakingBad/Services/BreakingBadApiService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "418">
+               </Location>
+               <Location
+                  uuid = "2FEE70CB-733F-4F59-BCBD-764F4478331F - af91e90e14902357"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, BreakingBad.AppError&gt;) -&gt; () in BreakingBad.BreakingBadApiService.retrieveModel(completion: (Swift.Result&lt;Swift.Array&lt;BreakingBad.Character&gt;, BreakingBad.AppError&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "BreakingBad"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sumanchatterjee/BreakingBad/BreakingBad/BreakingBad/Services/BreakingBadApiService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "479">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
