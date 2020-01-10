@@ -24,21 +24,12 @@ class BreakingBadCell: UICollectionViewCell {
     fatalError("Interface Builder is not supported!")
   }
 
-  override func awakeFromNib() {
-    super.awakeFromNib()
-
-    fatalError("Interface Builder is not supported!")
-  }
-
   override func prepareForReuse() {
     super.prepareForReuse()
-
     self.textLabel.text = nil
   }
 
   func setupCell(_ cellViewModel: BreakingListCellViewModel) {
-
-
     let imageView = UIImageView(frame: .zero)
     imageView.translatesAutoresizingMaskIntoConstraints = false
     self.contentView.addSubview(imageView)
@@ -54,7 +45,7 @@ class BreakingBadCell: UICollectionViewCell {
     self.imageView = imageView
 
     self.contentView.backgroundColor = .clear
-    
+
     let textLabel = UILabel(frame: .zero)
     textLabel.translatesAutoresizingMaskIntoConstraints = false
     textLabel.textColor = .white

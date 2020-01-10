@@ -10,24 +10,18 @@ import Foundation
 import UIKit
 
 class ApplicationCoordinator: Coordinator {
-  
+
   private let window: UIWindow
-  private let navigationcontroller: UINavigationController
-  private var coordinators = [String: Coordinator]()
-  
-  init(_ window: UIWindow) {
-      self.window = window
-      navigationcontroller = UINavigationController()
-  }
-  
-  func start() {
-      window.rootViewController = navigationcontroller
-      startNewScene()
-      window.makeKeyAndVisible()
-  }
-  
-  private func startNewScene() {
-    
+  private let navigationController: UINavigationController
+
+  init(_ window: UIWindow, navController: CustomNavigationController) {
+    self.window = window
+    self.navigationController = UINavigationController()
+    self.navigationController.navigationBar.prefersLargeTitles = true
   }
 
+  func start() {
+    window.rootViewController = navigationController
+    window.makeKeyAndVisible()
+  }
 }

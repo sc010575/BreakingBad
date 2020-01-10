@@ -20,6 +20,7 @@ struct BreakingListCellViewModel {
 
 protocol BreakingListViewModelUseCase {
   typealias ResultType = Result<[BreakingListCellViewModel], AppError>
+  var controllerTitle:String { get }
   func fetchBadCharacters(completion: @escaping(ResultType) -> Void)
 }
 
@@ -29,6 +30,8 @@ class BreakingListViewModel: BreakingListViewModelUseCase {
   init(service: BreakingBadApiServiceUseCase = BreakingBadApiService()) {
     self.service = service
   }
+  
+  var controllerTitle = "Breaking Bad"
 
   func fetchBadCharacters(completion: @escaping(ResultType) -> Void) {
     service.retrieveModel { (results) in

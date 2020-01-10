@@ -29,6 +29,7 @@
 		C59E444E23C86C2E00D3F8C2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E444D23C86C2E00D3F8C2 /* Coordinator.swift */; };
 		C59E445023C86C6E00D3F8C2 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E444F23C86C6E00D3F8C2 /* ApplicationCoordinator.swift */; };
 		C59E445523C87DD000D3F8C2 /* BreakingBadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E445423C87DD000D3F8C2 /* BreakingBadCell.swift */; };
+		C5A2A50423C8926200FED4B5 /* UIColor+rgb.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A50323C8926200FED4B5 /* UIColor+rgb.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		C59E444D23C86C2E00D3F8C2 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		C59E444F23C86C6E00D3F8C2 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		C59E445423C87DD000D3F8C2 /* BreakingBadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadCell.swift; sourceTree = "<group>"; };
+		C5A2A50323C8926200FED4B5 /* UIColor+rgb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+rgb.swift"; sourceTree = "<group>"; };
 		F2C6EDECDE7A17C621BA5D43 /* Pods-BreakingBadTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadTests.release.xcconfig"; path = "Target Support Files/Pods-BreakingBadTests/Pods-BreakingBadTests.release.xcconfig"; sourceTree = "<group>"; };
 		F58CE42E2B68B41517CE9B21 /* Pods-BreakingBadTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadTests.debug.xcconfig"; path = "Target Support Files/Pods-BreakingBadTests/Pods-BreakingBadTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -204,6 +206,7 @@
 		C56AE24923C7566100064A31 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				C5A2A50323C8926200FED4B5 /* UIColor+rgb.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				C56AE22723C755B500064A31 /* BreakingListViewController.swift in Sources */,
 				C59E445523C87DD000D3F8C2 /* BreakingBadCell.swift in Sources */,
 				C59E444923C7C25200D3F8C2 /* BreakingListViewModel.swift in Sources */,
+				C5A2A50423C8926200FED4B5 /* UIColor+rgb.swift in Sources */,
 				C56AE24D23C76FB400064A31 /* Serializable.swift in Sources */,
 				C56AE24F23C76FE000064A31 /* Network.swift in Sources */,
 				C56AE22323C755B500064A31 /* AppDelegate.swift in Sources */,
