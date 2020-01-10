@@ -19,42 +19,11 @@ class BreakingListViewController: UIViewController {
   }
 
   weak var collectionView: UICollectionView!
-  var loadingIndicator: UIActivityIndicatorView!
+  var alert:UIAlertController!
   
-  init(viewModel: BreakingListViewModelUseCase) {
-      self.viewModel = viewModel
-      super.init(nibName: nil, bundle: nil)
-  }
-
-  required init?(coder: NSCoder) {
-      fatalError("init(coder:) has not been implemented")
-  }
-
   override func loadView() {
     super.loadView()
-
-    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-    collectionView.translatesAutoresizingMaskIntoConstraints = false
-    self.view.addSubview(collectionView)
-    NSLayoutConstraint.activate([
-      collectionView.topAnchor.constraint(equalTo: self.view.topAnchor),
-      collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-      collectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-      collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-      ])
-    self.collectionView = collectionView
-    self.collectionView.register(BreakingBadCell.self, forCellWithReuseIdentifier: "BreakingBadCell")
-    loadingView()
-    viewModel.fetchBadCharacters { (badResult) in
-      self.loadingIndicator.stopAnimating()
-      switch badResult {
-      case .success(let results):
-        self.badCharecters = results
-        self.collectionView.reloadData()
-      case .failure(let appError):
-        print(appError.localizedDescription)
-      }
-    }
+    setupViews()
   }
 
   override func viewDidLoad() {
@@ -63,6 +32,31 @@ class BreakingListViewController: UIViewController {
     collectionView.delegate = self
     title = viewModel.controllerTitle
     loadingView()
+  }
+  
+  private func setupViews() {
+     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+     collectionView.translatesAutoresizingMaskIntoConstraints = false
+     self.view.addSubview(collectionView)
+     NSLayoutConstraint.activate([
+       collectionView.topAnchor.constraint(equalTo: self.view.topAnchor),
+       collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+       collectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+       collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+       ])
+     self.collectionView = collectionView
+     self.collectionView.register(BreakingBadCell.self, forCellWithReuseIdentifier: "BreakingBadCell")
+     viewModel.fetchBadCharacters { (badResult) in
+       self.removeLoadingView()
+       switch badResult {
+       case .success(let results):
+         self.badCharecters = results
+         self.collectionView.reloadData()
+       case .failure(let appError):
+         print(appError.localizedDescription)
+       }
+     }
+
   }
 }
 
@@ -123,14 +117,23 @@ extension BreakingListViewController: UICollectionViewDelegateFlowLayout {
 private extension BreakingListViewController {
   
   func loadingView() {
-    let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+    alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
 
-    loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+    let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
     loadingIndicator.hidesWhenStopped = true
-    loadingIndicator.style = .medium
+    loadingIndicator.color = .gray
+    if #available(iOS 13.0, *) {
+      loadingIndicator.style = .medium
+    } else {
+      // Fallback on earlier versions
+    }
     loadingIndicator.startAnimating();
 
     alert.view.addSubview(loadingIndicator)
     present(alert, animated: true, completion: nil)
+  }
+  
+  func removeLoadingView() {
+   alert.dismiss(animated: true, completion: nil)
   }
 }

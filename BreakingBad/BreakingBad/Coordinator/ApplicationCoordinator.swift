@@ -12,16 +12,26 @@ import UIKit
 class ApplicationCoordinator: Coordinator {
 
   private let window: UIWindow
-  private let navigationController: UINavigationController
+  private let presenter: UINavigationController
 
-  init(_ window: UIWindow, navController: CustomNavigationController) {
+  init(_ window: UIWindow, navController: UINavigationController) {
     self.window = window
-    self.navigationController = UINavigationController()
-    self.navigationController.navigationBar.prefersLargeTitles = true
+    self.presenter = navController
+    self.presenter.navigationBar.prefersLargeTitles = true
   }
 
   func start() {
-    window.rootViewController = navigationController
+    window.rootViewController = presenter
+    startBreakingList()
     window.makeKeyAndVisible()
+  }
+  
+  private func startBreakingList() {
+    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+    guard let vc = storyBoard.instantiateViewController(withIdentifier: String(describing: BreakingListViewController.self)) as? BreakingListViewController else { return }
+
+    let viewModel = BreakingListViewModel()
+    vc.viewModel = viewModel
+    presenter.pushViewController(vc, animated: true)
   }
 }

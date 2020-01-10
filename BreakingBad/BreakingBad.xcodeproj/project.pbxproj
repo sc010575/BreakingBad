@@ -10,7 +10,6 @@
 		3115C1F2DD2F5D4A1966F89C /* Pods_BreakingBad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CED5439F4545CFC6D4B907 /* Pods_BreakingBad.framework */; };
 		8B9B7BB6A941C42307B42928 /* Pods_BreakingBadTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2061283BF4EFB189CAA5639E /* Pods_BreakingBadTests.framework */; };
 		C56AE22323C755B500064A31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56AE22223C755B500064A31 /* AppDelegate.swift */; };
-		C56AE22523C755B500064A31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56AE22423C755B500064A31 /* SceneDelegate.swift */; };
 		C56AE22723C755B500064A31 /* BreakingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56AE22623C755B500064A31 /* BreakingListViewController.swift */; };
 		C56AE22A23C755B500064A31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C56AE22823C755B500064A31 /* Main.storyboard */; };
 		C56AE22C23C755B700064A31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C56AE22B23C755B700064A31 /* Assets.xcassets */; };
@@ -49,7 +48,6 @@
 		C3CED5439F4545CFC6D4B907 /* Pods_BreakingBad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BreakingBad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C56AE21F23C755B500064A31 /* BreakingBad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreakingBad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C56AE22223C755B500064A31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C56AE22423C755B500064A31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C56AE22623C755B500064A31 /* BreakingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingListViewController.swift; sourceTree = "<group>"; };
 		C56AE22923C755B500064A31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C56AE22B23C755B700064A31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 				C56AE24523C755F300064A31 /* Model */,
 				C56AE24423C755E600064A31 /* Coordinator */,
 				C56AE22223C755B500064A31 /* AppDelegate.swift */,
-				C56AE22423C755B500064A31 /* SceneDelegate.swift */,
 				C56AE22823C755B500064A31 /* Main.storyboard */,
 				C56AE22B23C755B700064A31 /* Assets.xcassets */,
 				C56AE22D23C755B700064A31 /* LaunchScreen.storyboard */,
@@ -449,7 +446,6 @@
 				C56AE24F23C76FE000064A31 /* Network.swift in Sources */,
 				C56AE22323C755B500064A31 /* AppDelegate.swift in Sources */,
 				C59E445023C86C6E00D3F8C2 /* ApplicationCoordinator.swift in Sources */,
-				C56AE22523C755B500064A31 /* SceneDelegate.swift in Sources */,
 				C56AE24B23C76D8000064A31 /* Character.swift in Sources */,
 				C56AE25123C7708D00064A31 /* BreakingBadApiService.swift in Sources */,
 				C59E444E23C86C2E00D3F8C2 /* Coordinator.swift in Sources */,
@@ -619,6 +615,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8VT29F6R7U;
 				INFOPLIST_FILE = BreakingBad/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -638,6 +635,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8VT29F6R7U;
 				INFOPLIST_FILE = BreakingBad/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
