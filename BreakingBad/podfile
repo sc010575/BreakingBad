@@ -8,6 +8,7 @@ target 'BreakingBad' do
   # Pods for BreakingBad
   pod 'SwiftIcons'
   pod 'SDWebImage', '~> 5.0'
+  pod 'ReachabilitySwift'
 
   target 'BreakingBadTests' do
     inherit! :search_paths
