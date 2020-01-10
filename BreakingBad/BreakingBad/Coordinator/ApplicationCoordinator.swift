@@ -13,7 +13,8 @@ class ApplicationCoordinator: Coordinator {
 
   private let window: UIWindow
   private let presenter: UINavigationController
-
+  private let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+  
   init(_ window: UIWindow, navController: UINavigationController) {
     self.window = window
     self.presenter = navController
@@ -25,12 +26,24 @@ class ApplicationCoordinator: Coordinator {
     startBreakingList()
     window.makeKeyAndVisible()
   }
-  
+
   private func startBreakingList() {
-    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
     guard let vc = storyBoard.instantiateViewController(withIdentifier: String(describing: BreakingListViewController.self)) as? BreakingListViewController else { return }
 
     let viewModel = BreakingListViewModel()
+    viewModel.delegate = self
+    vc.viewModel = viewModel
+    presenter.pushViewController(vc, animated: true)
+  }
+}
+
+extension ApplicationCoordinator: BreakingListViewModelCoordinatorDelegate {
+  func BreakingListViewModelDidSelect(_ viewModel: BreakingListViewModel, character:Character) {
+    guard let vc = storyBoard.instantiateViewController(withIdentifier: String(describing: BreakingBadDetailViewController.self)) as? BreakingBadDetailViewController else { return }
+
+    
+    let viewModel = BreakingBadDetailViewModel()
+    viewModel.character.value = character
     vc.viewModel = viewModel
     presenter.pushViewController(vc, animated: true)
   }

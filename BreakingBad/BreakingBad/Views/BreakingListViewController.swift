@@ -78,7 +78,7 @@ extension BreakingListViewController: UICollectionViewDataSource {
 extension BreakingListViewController: UICollectionViewDelegate {
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    print(indexPath.row + 1)
+    viewModel.itemAtIndexPath(indexPath.row)
   }
 }
 

@@ -32,6 +32,8 @@ class BreakingBadCell: UICollectionViewCell {
   func setupCell(_ cellViewModel: BreakingListCellViewModel) {
     let imageView = UIImageView(frame: .zero)
     imageView.translatesAutoresizingMaskIntoConstraints = false
+    imageView.layer.cornerRadius = 8.0
+    imageView.clipsToBounds = true
     self.contentView.addSubview(imageView)
 
     NSLayoutConstraint.activate([

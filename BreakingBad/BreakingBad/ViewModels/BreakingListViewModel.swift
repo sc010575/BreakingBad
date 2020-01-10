@@ -21,11 +21,20 @@ struct BreakingListCellViewModel {
 protocol BreakingListViewModelUseCase {
   typealias ResultType = Result<[BreakingListCellViewModel], AppError>
   var controllerTitle:String { get }
+  var delegate: BreakingListViewModelCoordinatorDelegate? { get set }
   func fetchBadCharacters(completion: @escaping(ResultType) -> Void)
+  func itemAtIndexPath(_ index:Int)
 }
 
-class BreakingListViewModel: BreakingListViewModelUseCase {
+protocol BreakingListViewModelCoordinatorDelegate: class
+{
+  func BreakingListViewModelDidSelect(_ viewModel: BreakingListViewModel, character:Character)
+}
+
+final class BreakingListViewModel: BreakingListViewModelUseCase {
   private let service: BreakingBadApiServiceUseCase
+  var characters: [Character] = [Character]()
+  weak var delegate: BreakingListViewModelCoordinatorDelegate?
 
   init(service: BreakingBadApiServiceUseCase = BreakingBadApiService()) {
     self.service = service
@@ -37,13 +46,20 @@ class BreakingListViewModel: BreakingListViewModelUseCase {
     service.retrieveModel { (results) in
       switch results {
       case .success(let models):
-        let cellViewModels = models.map { BreakingListCellViewModel($0) }.sorted (by: { $0.name < $1.name
-        })
+        let cellViewModels = models.map { BreakingListCellViewModel($0) }
+        self.characters = models
         completion(.success(cellViewModels))
 
       case .failure(let error):
         completion(.failure(error))
       }
+    }
+  }
+  
+  func itemAtIndexPath(_ index:Int) {
+    if let delegate = delegate {
+        let charecter = characters[index]
+      delegate.BreakingListViewModelDidSelect(self, character: charecter)
     }
   }
 }

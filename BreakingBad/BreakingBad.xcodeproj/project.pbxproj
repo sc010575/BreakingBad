@@ -29,6 +29,8 @@
 		C59E445023C86C6E00D3F8C2 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E444F23C86C6E00D3F8C2 /* ApplicationCoordinator.swift */; };
 		C59E445523C87DD000D3F8C2 /* BreakingBadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59E445423C87DD000D3F8C2 /* BreakingBadCell.swift */; };
 		C5A2A50423C8926200FED4B5 /* UIColor+rgb.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A50323C8926200FED4B5 /* UIColor+rgb.swift */; };
+		C5A2A50623C8B1AB00FED4B5 /* BreakingBadDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A50523C8B1AB00FED4B5 /* BreakingBadDetailViewController.swift */; };
+		C5A2A50823C9049E00FED4B5 /* BreakingBadDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A50723C9049E00FED4B5 /* BreakingBadDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		C59E444F23C86C6E00D3F8C2 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		C59E445423C87DD000D3F8C2 /* BreakingBadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadCell.swift; sourceTree = "<group>"; };
 		C5A2A50323C8926200FED4B5 /* UIColor+rgb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+rgb.swift"; sourceTree = "<group>"; };
+		C5A2A50523C8B1AB00FED4B5 /* BreakingBadDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadDetailViewController.swift; sourceTree = "<group>"; };
+		C5A2A50723C9049E00FED4B5 /* BreakingBadDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadDetailViewModel.swift; sourceTree = "<group>"; };
 		F2C6EDECDE7A17C621BA5D43 /* Pods-BreakingBadTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadTests.release.xcconfig"; path = "Target Support Files/Pods-BreakingBadTests/Pods-BreakingBadTests.release.xcconfig"; sourceTree = "<group>"; };
 		F58CE42E2B68B41517CE9B21 /* Pods-BreakingBadTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadTests.debug.xcconfig"; path = "Target Support Files/Pods-BreakingBadTests/Pods-BreakingBadTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -188,6 +192,7 @@
 			children = (
 				C56AE22623C755B500064A31 /* BreakingListViewController.swift */,
 				C59E445423C87DD000D3F8C2 /* BreakingBadCell.swift */,
+				C5A2A50523C8B1AB00FED4B5 /* BreakingBadDetailViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				C59E444823C7C25200D3F8C2 /* BreakingListViewModel.swift */,
+				C5A2A50723C9049E00FED4B5 /* BreakingBadDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -445,6 +451,8 @@
 				C56AE24D23C76FB400064A31 /* Serializable.swift in Sources */,
 				C56AE24F23C76FE000064A31 /* Network.swift in Sources */,
 				C56AE22323C755B500064A31 /* AppDelegate.swift in Sources */,
+				C5A2A50823C9049E00FED4B5 /* BreakingBadDetailViewModel.swift in Sources */,
+				C5A2A50623C8B1AB00FED4B5 /* BreakingBadDetailViewController.swift in Sources */,
 				C59E445023C86C6E00D3F8C2 /* ApplicationCoordinator.swift in Sources */,
 				C56AE24B23C76D8000064A31 /* Character.swift in Sources */,
 				C56AE25123C7708D00064A31 /* BreakingBadApiService.swift in Sources */,

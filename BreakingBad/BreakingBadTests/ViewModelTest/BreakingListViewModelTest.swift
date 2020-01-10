@@ -33,8 +33,8 @@ class BreakingListViewModelTest: QuickSpec {
               case .success(let testCellViewModels):
                 expect(testCellViewModels.count).to(equal(4))
                 let testCellViewModel = testCellViewModels[0]
-                expect(testCellViewModel.name).to(equal("Walter White Jr."))
-                expect(testCellViewModel.imageUrl).to(equal("https://media1.popsugar-assets.com/files/thumbor/WeLUSvbAMS_GL4iELYAUzu7Bpv0/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2018/01/12/910/n/1922283/fb758e62b5daf3c9_TCDBRBA_EC011/i/RJ-Mitte-Walter-White-Jr.jpg"))
+                expect(testCellViewModel.name).to(equal("Jesse Pinkman"))
+                expect(testCellViewModel.imageUrl).to(equal("https://url.220px-Jesse_Pinkman2.jpg"))
               default:
                   break
               }

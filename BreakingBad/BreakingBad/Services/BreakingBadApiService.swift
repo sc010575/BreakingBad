@@ -30,7 +30,8 @@ final class BreakingBadApiService: BreakingBadApiServiceUseCase {
           let modelDataResult: ResulType = Serialize.parse(data: data)
           switch modelDataResult {
           case .success(let appData):
-            let filteredAppData = Character.filteredCharacter(appData)
+            let filteredAppData = Character.filteredCharacter(appData).sorted (by: { $0.name < $1.name
+            })
             serviceResult = .success(filteredAppData)
           case .failure(let error):
             serviceResult = .failure(error)

@@ -25,4 +25,6 @@ extension Character {
     let filteredCharecters = charecters.filter { $0.category.contains("Breaking Bad") }
     return filteredCharecters
   }
+  
+  static let emptyCharacter = Character(charId: 0, name: "", occupation: [], img: "", status: "", nickname: "", appearance: [], category: "")
 }
