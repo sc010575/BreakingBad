@@ -137,3 +137,12 @@ private extension BreakingListViewController {
    alert.dismiss(animated: true, completion: nil)
   }
 }
+
+//MARK:- Only for debuging purpose for testing
+#if DEBUG
+extension BreakingListViewController {
+    public func exposePrivateBadCharecters() -> [BreakingListCellViewModel] {
+        return self.badCharecters
+    }
+}
+#endif

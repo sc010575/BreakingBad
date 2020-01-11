@@ -6,7 +6,6 @@ target 'BreakingBad' do
   use_frameworks!
 
   # Pods for BreakingBad
-  pod 'SwiftIcons'
   pod 'SDWebImage', '~> 5.0'
   pod 'ReachabilitySwift'
 

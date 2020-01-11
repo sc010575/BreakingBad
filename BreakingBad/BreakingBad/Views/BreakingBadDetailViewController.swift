@@ -13,7 +13,10 @@ class BreakingBadDetailViewController: UIViewController {
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var nickNameLabel: UILabel!
   @IBOutlet weak var profileImageView: UIImageView!
-
+  @IBOutlet weak var appearenceLabel: UILabel!
+  @IBOutlet weak var occupation: UILabel!
+  @IBOutlet weak var statusLabel: UILabel!
+  
   var viewModel: BreakingBadDetailViewModelUseCase!
 
   override func viewDidLoad() {
@@ -24,6 +27,9 @@ class BreakingBadDetailViewController: UIViewController {
       self.nickNameLabel.text = "Best known as - \(character.nickname)"
       guard let imageUrl = URL(string: character.img) else { return }
       self.profileImageView?.sd_setImage(with: imageUrl, completed: nil)
+      self.statusLabel.text = character.status
+      self.occupation.text = "\(character.occupation.joined(separator: ","))"
+      self.appearenceLabel.text = character.appearance.map{String($0)}.joined(separator: ",")
     }
   }
 }

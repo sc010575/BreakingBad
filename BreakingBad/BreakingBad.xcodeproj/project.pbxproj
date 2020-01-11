@@ -31,6 +31,9 @@
 		C5A2A50423C8926200FED4B5 /* UIColor+rgb.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A50323C8926200FED4B5 /* UIColor+rgb.swift */; };
 		C5A2A50623C8B1AB00FED4B5 /* BreakingBadDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A50523C8B1AB00FED4B5 /* BreakingBadDetailViewController.swift */; };
 		C5A2A50823C9049E00FED4B5 /* BreakingBadDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A50723C9049E00FED4B5 /* BreakingBadDetailViewModel.swift */; };
+		C5A2A50B23C9E86800FED4B5 /* BreakingBadDetailViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A50A23C9E86800FED4B5 /* BreakingBadDetailViewControllerTest.swift */; };
+		C5A2A50D23C9EB3A00FED4B5 /* Viewcontroller+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A50C23C9EB3A00FED4B5 /* Viewcontroller+Test.swift */; };
+		C5A2A50F23C9F15D00FED4B5 /* BreakingListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A50E23C9F15D00FED4B5 /* BreakingListViewControllerTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +77,9 @@
 		C5A2A50323C8926200FED4B5 /* UIColor+rgb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+rgb.swift"; sourceTree = "<group>"; };
 		C5A2A50523C8B1AB00FED4B5 /* BreakingBadDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadDetailViewController.swift; sourceTree = "<group>"; };
 		C5A2A50723C9049E00FED4B5 /* BreakingBadDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadDetailViewModel.swift; sourceTree = "<group>"; };
+		C5A2A50A23C9E86800FED4B5 /* BreakingBadDetailViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadDetailViewControllerTest.swift; sourceTree = "<group>"; };
+		C5A2A50C23C9EB3A00FED4B5 /* Viewcontroller+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Viewcontroller+Test.swift"; sourceTree = "<group>"; };
+		C5A2A50E23C9F15D00FED4B5 /* BreakingListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingListViewControllerTest.swift; sourceTree = "<group>"; };
 		F2C6EDECDE7A17C621BA5D43 /* Pods-BreakingBadTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadTests.release.xcconfig"; path = "Target Support Files/Pods-BreakingBadTests/Pods-BreakingBadTests.release.xcconfig"; sourceTree = "<group>"; };
 		F58CE42E2B68B41517CE9B21 /* Pods-BreakingBadTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadTests.debug.xcconfig"; path = "Target Support Files/Pods-BreakingBadTests/Pods-BreakingBadTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,6 +156,7 @@
 		C56AE23823C755B700064A31 /* BreakingBadTests */ = {
 			isa = PBXGroup;
 			children = (
+				C5A2A50923C9E84200FED4B5 /* ViewControllerTest */,
 				C59E444A23C8568A00D3F8C2 /* ViewModelTest */,
 				C59E444323C7880F00D3F8C2 /* ModelTest */,
 				C59E443D23C7874600D3F8C2 /* Mock */,
@@ -245,6 +252,16 @@
 				C59E444B23C856CA00D3F8C2 /* BreakingListViewModelTest.swift */,
 			);
 			path = ViewModelTest;
+			sourceTree = "<group>";
+		};
+		C5A2A50923C9E84200FED4B5 /* ViewControllerTest */ = {
+			isa = PBXGroup;
+			children = (
+				C5A2A50A23C9E86800FED4B5 /* BreakingBadDetailViewControllerTest.swift */,
+				C5A2A50C23C9EB3A00FED4B5 /* Viewcontroller+Test.swift */,
+				C5A2A50E23C9F15D00FED4B5 /* BreakingListViewControllerTest.swift */,
+			);
+			path = ViewControllerTest;
 			sourceTree = "<group>";
 		};
 		E77148AFAD74F9352A2AE26A /* Frameworks */ = {
@@ -468,6 +485,9 @@
 				C59E444C23C856CA00D3F8C2 /* BreakingListViewModelTest.swift in Sources */,
 				C59E444223C787B300D3F8C2 /* Fixture.swift in Sources */,
 				C59E444523C7883000D3F8C2 /* CharacterTest.swift in Sources */,
+				C5A2A50D23C9EB3A00FED4B5 /* Viewcontroller+Test.swift in Sources */,
+				C5A2A50B23C9E86800FED4B5 /* BreakingBadDetailViewControllerTest.swift in Sources */,
+				C5A2A50F23C9F15D00FED4B5 /* BreakingListViewControllerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
