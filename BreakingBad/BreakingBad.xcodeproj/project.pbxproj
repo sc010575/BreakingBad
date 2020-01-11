@@ -35,6 +35,9 @@
 		C5A2A50D23C9EB3A00FED4B5 /* Viewcontroller+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A50C23C9EB3A00FED4B5 /* Viewcontroller+Test.swift */; };
 		C5A2A50F23C9F15D00FED4B5 /* BreakingListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A50E23C9F15D00FED4B5 /* BreakingListViewControllerTest.swift */; };
 		C5A2A51123CA088F00FED4B5 /* UIBarButtonItem+size.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A51023CA088F00FED4B5 /* UIBarButtonItem+size.swift */; };
+		C5A2A51323CA267B00FED4B5 /* FilterViewLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A51223CA267B00FED4B5 /* FilterViewLauncher.swift */; };
+		C5A2A51723CA486C00FED4B5 /* ConnectivityHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A51623CA486C00FED4B5 /* ConnectivityHandler.swift */; };
+		C5A2A51923CA48C700FED4B5 /* ErrorTrigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A51823CA48C700FED4B5 /* ErrorTrigger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +85,9 @@
 		C5A2A50C23C9EB3A00FED4B5 /* Viewcontroller+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Viewcontroller+Test.swift"; sourceTree = "<group>"; };
 		C5A2A50E23C9F15D00FED4B5 /* BreakingListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingListViewControllerTest.swift; sourceTree = "<group>"; };
 		C5A2A51023CA088F00FED4B5 /* UIBarButtonItem+size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+size.swift"; sourceTree = "<group>"; };
+		C5A2A51223CA267B00FED4B5 /* FilterViewLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewLauncher.swift; sourceTree = "<group>"; };
+		C5A2A51623CA486C00FED4B5 /* ConnectivityHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityHandler.swift; sourceTree = "<group>"; };
+		C5A2A51823CA48C700FED4B5 /* ErrorTrigger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTrigger.swift; sourceTree = "<group>"; };
 		F2C6EDECDE7A17C621BA5D43 /* Pods-BreakingBadTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadTests.release.xcconfig"; path = "Target Support Files/Pods-BreakingBadTests/Pods-BreakingBadTests.release.xcconfig"; sourceTree = "<group>"; };
 		F58CE42E2B68B41517CE9B21 /* Pods-BreakingBadTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadTests.debug.xcconfig"; path = "Target Support Files/Pods-BreakingBadTests/Pods-BreakingBadTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -192,6 +198,7 @@
 				C56AE24C23C76FB400064A31 /* Serializable.swift */,
 				C56AE24E23C76FE000064A31 /* Network.swift */,
 				C56AE25023C7708D00064A31 /* BreakingBadApiService.swift */,
+				C5A2A51623CA486C00FED4B5 /* ConnectivityHandler.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -202,6 +209,8 @@
 				C56AE22623C755B500064A31 /* BreakingListViewController.swift */,
 				C59E445423C87DD000D3F8C2 /* BreakingBadCell.swift */,
 				C5A2A50523C8B1AB00FED4B5 /* BreakingBadDetailViewController.swift */,
+				C5A2A51223CA267B00FED4B5 /* FilterViewLauncher.swift */,
+				C5A2A51823CA48C700FED4B5 /* ErrorTrigger.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -465,7 +474,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C56AE22723C755B500064A31 /* BreakingListViewController.swift in Sources */,
+				C5A2A51723CA486C00FED4B5 /* ConnectivityHandler.swift in Sources */,
 				C5A2A51123CA088F00FED4B5 /* UIBarButtonItem+size.swift in Sources */,
+				C5A2A51323CA267B00FED4B5 /* FilterViewLauncher.swift in Sources */,
 				C59E445523C87DD000D3F8C2 /* BreakingBadCell.swift in Sources */,
 				C59E444923C7C25200D3F8C2 /* BreakingListViewModel.swift in Sources */,
 				C5A2A50423C8926200FED4B5 /* UIColor+rgb.swift in Sources */,
@@ -474,6 +485,7 @@
 				C56AE22323C755B500064A31 /* AppDelegate.swift in Sources */,
 				C5A2A50823C9049E00FED4B5 /* BreakingBadDetailViewModel.swift in Sources */,
 				C5A2A50623C8B1AB00FED4B5 /* BreakingBadDetailViewController.swift in Sources */,
+				C5A2A51923CA48C700FED4B5 /* ErrorTrigger.swift in Sources */,
 				C59E445023C86C6E00D3F8C2 /* ApplicationCoordinator.swift in Sources */,
 				C56AE24B23C76D8000064A31 /* Character.swift in Sources */,
 				C56AE25123C7708D00064A31 /* BreakingBadApiService.swift in Sources */,

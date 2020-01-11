@@ -11,25 +11,29 @@ import Foundation
 struct BreakingListCellViewModel {
   let name: String
   let imageUrl: String
+  let charId: Int
 
   init(_ character: Character) {
     self.name = character.name
     self.imageUrl = character.img
+    self.charId = character.charId
   }
 }
 
 protocol BreakingListViewModelUseCase {
   typealias ResultType = Result<[BreakingListCellViewModel], AppError>
-  var controllerTitle:String { get }
+  var controllerTitle: String { get }
   var delegate: BreakingListViewModelCoordinatorDelegate? { get set }
   func fetchBadCharacters(completion: @escaping(ResultType) -> Void)
-  func itemAtIndexPath(_ index:Int)
-  func fileterCharectersByAppearance(_ appearance:[Int]) -> [Character]
+  func itemAtIndexPath(_ index: Int)
+  func fileterCharectersByAppearance(_ appearance: [Int]) -> [BreakingListCellViewModel]
+  func loadAllCharecters() -> [BreakingListCellViewModel]
+
 }
 
 protocol BreakingListViewModelCoordinatorDelegate: class
 {
-  func BreakingListViewModelDidSelect(_ viewModel: BreakingListViewModel, character:Character)
+  func BreakingListViewModelDidSelect(_ viewModel: BreakingListViewModel, character: Character)
 }
 
 final class BreakingListViewModel: BreakingListViewModelUseCase {
@@ -40,7 +44,7 @@ final class BreakingListViewModel: BreakingListViewModelUseCase {
   init(service: BreakingBadApiServiceUseCase = BreakingBadApiService()) {
     self.service = service
   }
-  
+
   var controllerTitle = "Breaking Bad"
 
   func fetchBadCharacters(completion: @escaping(ResultType) -> Void) {
@@ -56,21 +60,31 @@ final class BreakingListViewModel: BreakingListViewModelUseCase {
       }
     }
   }
-  
-  func itemAtIndexPath(_ index:Int) {
+
+  func itemAtIndexPath(_ charId: Int) {
     if let delegate = delegate {
-        let charecter = characters[index]
-      delegate.BreakingListViewModelDidSelect(self, character: charecter)
+      let charecters = characters.filter { $0.charId == charId }
+      if let charecter = charecters.first {
+        delegate.BreakingListViewModelDidSelect(self, character: charecter)
+      }
     }
   }
-  func fileterCharectersByAppearance(_ appearance:[Int]) -> [Character] {
-    let appearanceReduce = appearance.reduce(0,+)
+
+  func fileterCharectersByAppearance(_ appearance: [Int]) -> [BreakingListCellViewModel] {
+    let appearanceString = appearance.map{ String($0)}.joined(separator: "-")
     var resultCharecters = [Character]()
     characters.forEach { (character) in
-      if character.appearance.reduce(0,+) == appearanceReduce {
+      let appearance = character.appearance.map{String($0)}.joined(separator: "-")
+      if appearance == appearanceString {
         resultCharecters.append(character)
       }
     }
-    return resultCharecters
+    let cellViewModels = resultCharecters.map { BreakingListCellViewModel($0) }
+    return cellViewModels
+  }
+
+  func loadAllCharecters() -> [BreakingListCellViewModel] {
+    let cellViewModels = characters.map { BreakingListCellViewModel($0) }
+    return cellViewModels
   }
 }
