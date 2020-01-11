@@ -23,6 +23,7 @@ class BreakingListViewController: UIViewController {
   
   override func loadView() {
     super.loadView()
+    setupNavigationBar()
     setupViews()
   }
 
@@ -56,8 +57,18 @@ class BreakingListViewController: UIViewController {
          print(appError.localizedDescription)
        }
      }
-
   }
+  
+  private func setupNavigationBar() {
+    let filterButtonItem = UIBarButtonItem.menuButton(self, action: #selector(handleFilter), imageName:"filter-edit" , tintColor: .black)
+    navigationItem.rightBarButtonItems = [filterButtonItem]
+    navigationController?.hidesBarsOnSwipe = true
+  }
+  
+  @objc func handleFilter() {
+   //   settingLauncher.showSettingView()
+  }
+
 }
 
 

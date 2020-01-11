@@ -24,6 +24,7 @@ protocol BreakingListViewModelUseCase {
   var delegate: BreakingListViewModelCoordinatorDelegate? { get set }
   func fetchBadCharacters(completion: @escaping(ResultType) -> Void)
   func itemAtIndexPath(_ index:Int)
+  func fileterCharectersByAppearance(_ appearance:[Int]) -> [Character]
 }
 
 protocol BreakingListViewModelCoordinatorDelegate: class
@@ -61,5 +62,15 @@ final class BreakingListViewModel: BreakingListViewModelUseCase {
         let charecter = characters[index]
       delegate.BreakingListViewModelDidSelect(self, character: charecter)
     }
+  }
+  func fileterCharectersByAppearance(_ appearance:[Int]) -> [Character] {
+    let appearanceReduce = appearance.reduce(0,+)
+    var resultCharecters = [Character]()
+    characters.forEach { (character) in
+      if character.appearance.reduce(0,+) == appearanceReduce {
+        resultCharecters.append(character)
+      }
+    }
+    return resultCharecters
   }
 }

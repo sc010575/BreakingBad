@@ -22,9 +22,9 @@ class CharacterTest: QuickSpec {
           let modelToTest: ResulType = Serialize.parse(data: dataResult!)
           switch modelToTest {
           case .success(let results):
-            expect(results.count).to(equal(6))
+            expect(results.count).to(equal(9))
             let filteredModel = Character.filteredCharacter(results)
-            expect(filteredModel.count).to(equal(4))
+            expect(filteredModel.count).to(equal(7))
             let characterToTest = filteredModel[0]
             expect(characterToTest.name).to(equal("Walter White"))
             expect(characterToTest.img).to(equal("https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg"))

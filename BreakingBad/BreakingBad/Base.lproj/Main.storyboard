@@ -56,14 +56,14 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Duc-EZ-Qaz">
                                                 <rect key="frame" x="20" y="424" width="374" height="24"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Occupation" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yk-vP-6eh">
-                                                        <rect key="frame" x="0.0" y="0.0" width="251.5" height="24"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Occupation 👇" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yk-vP-6eh">
+                                                        <rect key="frame" x="0.0" y="0.0" width="270.5" height="24"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFA-hi-JOo">
-                                                        <rect key="frame" x="251.5" y="0.0" width="122.5" height="24"/>
+                                                        <rect key="frame" x="270.5" y="0.0" width="103.5" height="24"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -147,7 +147,7 @@
                     </view>
                     <size key="freeformSize" width="414" height="950"/>
                     <connections>
-                        <outlet property="appearenceLabel" destination="eJt-Pg-BZg" id="RBY-XH-4Ll"/>
+                        <outlet property="appearanceLabel" destination="eJt-Pg-BZg" id="RBY-XH-4Ll"/>
                         <outlet property="nameLabel" destination="mea-2R-aGd" id="hii-n5-m90"/>
                         <outlet property="nickNameLabel" destination="WC2-Bm-Px8" id="8KD-1b-Acq"/>
                         <outlet property="occupation" destination="DDH-P0-7iA" id="Pvq-rd-Z1B"/>

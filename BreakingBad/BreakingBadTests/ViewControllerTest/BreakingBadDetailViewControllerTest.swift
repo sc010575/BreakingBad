@@ -40,8 +40,8 @@ class BreakingBadDetailViewControllerTest: QuickSpec {
         it("Should show the Occupation with a comma seperated string") {
           expect(viewControllerOnTest?.occupation.text).to(equal("Doctor,Other Profession"))
         }
-        it("Should show the Appearence with a comma seperated string") {
-          expect(viewControllerOnTest?.appearenceLabel.text).to(equal("1,2,4"))
+        it("Should show the Appearance with a comma seperated string") {
+          expect(viewControllerOnTest?.appearanceLabel.text).to(equal("1,2,4"))
         }
       }
     }

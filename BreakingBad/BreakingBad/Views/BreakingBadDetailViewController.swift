@@ -13,7 +13,7 @@ class BreakingBadDetailViewController: UIViewController {
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var nickNameLabel: UILabel!
   @IBOutlet weak var profileImageView: UIImageView!
-  @IBOutlet weak var appearenceLabel: UILabel!
+  @IBOutlet weak var appearanceLabel: UILabel!
   @IBOutlet weak var occupation: UILabel!
   @IBOutlet weak var statusLabel: UILabel!
   
@@ -29,7 +29,7 @@ class BreakingBadDetailViewController: UIViewController {
       self.profileImageView?.sd_setImage(with: imageUrl, completed: nil)
       self.statusLabel.text = character.status
       self.occupation.text = "\(character.occupation.joined(separator: ","))"
-      self.appearenceLabel.text = character.appearance.map{String($0)}.joined(separator: ",")
+      self.appearanceLabel.text = character.appearance.map{String($0)}.joined(separator: ",")
     }
   }
 }

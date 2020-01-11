@@ -141,5 +141,74 @@
       "better_call_saul_appearance":[
 
       ]
+   },
+   {
+      "char_id":7,
+      "name":"Name 1",
+      "birthday":"Unknown",
+      "occupation":[
+         "Housewife",
+         "Clepto"
+      ],
+      "img":"https://vignette.wikia.nocookie.net/breakingbad/images/1/10/Season_2_-_Marie.jpg/revision/latest?cb=20120617211645",
+      "status":"Alive",
+      "nickname":"Marie",
+      "appearance":[
+         1,
+         2,
+         3
+      ],
+      "portrayed":"Betsy Brandt",
+      "category":"Breaking Bad",
+      "better_call_saul_appearance":[
+
+      ]
+   },
+   {
+      "char_id":8,
+      "name":"Name 2",
+      "birthday":"Unknown",
+      "occupation":[
+         "Housewife",
+         "Clepto"
+      ],
+      "img":"https://vignette.wikia.nocookie.net/breakingbad/images/1/10/Season_2_-_Marie.jpg/revision/latest?cb=20120617211645",
+      "status":"Alive",
+      "nickname":"Marie",
+      "appearance":[
+         2,
+         3,
+         4
+      ],
+      "portrayed":"Betsy Brandt",
+      "category":"Breaking Bad",
+      "better_call_saul_appearance":[
+
+      ]
+   },
+   {
+      "char_id":9,
+      "name":"Name 3",
+      "birthday":"Unknown",
+      "occupation":[
+         "Housewife",
+         "Clepto"
+      ],
+      "img":"https://vignette.wikia.nocookie.net/breakingbad/images/1/10/Season_2_-_Marie.jpg/revision/latest?cb=20120617211645",
+      "status":"Alive",
+      "nickname":"Marie",
+      "appearance":[
+         2,
+         3,
+         4
+      ],
+      "portrayed":"Betsy Brandt",
+      "category":"Breaking Bad",
+      "better_call_saul_appearance":[
+
+      ]
    }
+
+
+
 ]

@@ -32,6 +32,9 @@ class BreakingListViewControllerTest: QuickSpec {
           let (_, tearDown) = (viewControllerOnTest?.appearInWindowTearDown())!
           do { tearDown() }
         }
+        it("should have atleast filter button on the navigation bar") {
+          expect(viewControllerOnTest?.navigationItem.rightBarButtonItems?.count).to(equal(1))
+        }
         it("should initiate a collection view") {
           expect(viewControllerOnTest?.collectionView).notTo(beNil())
         }
@@ -39,7 +42,7 @@ class BreakingListViewControllerTest: QuickSpec {
           expect(viewControllerOnTest?.title).to(equal("Breaking Bad"))
         }
         it("should populate the cell viewmodel list") {
-          expect(viewControllerOnTest?.exposePrivateBadCharecters().count).toEventually(equal(4))
+          expect(viewControllerOnTest?.exposePrivateBadCharecters().count).toEventually(equal(7))
           let cellViewModelToTest = viewControllerOnTest?.exposePrivateBadCharecters()[0]
           expect(cellViewModelToTest?.name).toEventually(equal("Jesse Pinkman"))
         }

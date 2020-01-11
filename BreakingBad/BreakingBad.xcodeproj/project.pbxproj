@@ -34,6 +34,7 @@
 		C5A2A50B23C9E86800FED4B5 /* BreakingBadDetailViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A50A23C9E86800FED4B5 /* BreakingBadDetailViewControllerTest.swift */; };
 		C5A2A50D23C9EB3A00FED4B5 /* Viewcontroller+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A50C23C9EB3A00FED4B5 /* Viewcontroller+Test.swift */; };
 		C5A2A50F23C9F15D00FED4B5 /* BreakingListViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A50E23C9F15D00FED4B5 /* BreakingListViewControllerTest.swift */; };
+		C5A2A51123CA088F00FED4B5 /* UIBarButtonItem+size.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A51023CA088F00FED4B5 /* UIBarButtonItem+size.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		C5A2A50A23C9E86800FED4B5 /* BreakingBadDetailViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadDetailViewControllerTest.swift; sourceTree = "<group>"; };
 		C5A2A50C23C9EB3A00FED4B5 /* Viewcontroller+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Viewcontroller+Test.swift"; sourceTree = "<group>"; };
 		C5A2A50E23C9F15D00FED4B5 /* BreakingListViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingListViewControllerTest.swift; sourceTree = "<group>"; };
+		C5A2A51023CA088F00FED4B5 /* UIBarButtonItem+size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+size.swift"; sourceTree = "<group>"; };
 		F2C6EDECDE7A17C621BA5D43 /* Pods-BreakingBadTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadTests.release.xcconfig"; path = "Target Support Files/Pods-BreakingBadTests/Pods-BreakingBadTests.release.xcconfig"; sourceTree = "<group>"; };
 		F58CE42E2B68B41517CE9B21 /* Pods-BreakingBadTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadTests.debug.xcconfig"; path = "Target Support Files/Pods-BreakingBadTests/Pods-BreakingBadTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				C5A2A50323C8926200FED4B5 /* UIColor+rgb.swift */,
+				C5A2A51023CA088F00FED4B5 /* UIBarButtonItem+size.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C56AE22723C755B500064A31 /* BreakingListViewController.swift in Sources */,
+				C5A2A51123CA088F00FED4B5 /* UIBarButtonItem+size.swift in Sources */,
 				C59E445523C87DD000D3F8C2 /* BreakingBadCell.swift in Sources */,
 				C59E444923C7C25200D3F8C2 /* BreakingListViewModel.swift in Sources */,
 				C5A2A50423C8926200FED4B5 /* UIColor+rgb.swift in Sources */,

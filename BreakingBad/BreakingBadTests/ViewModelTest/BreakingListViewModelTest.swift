@@ -31,7 +31,7 @@ class BreakingListViewModelTest: QuickSpec {
               extectation.fulfill()
               switch resultSuccess {
               case .success(let testCellViewModels):
-                expect(testCellViewModels.count).to(equal(4))
+                expect(testCellViewModels.count).to(equal(7))
                 let testCellViewModel = testCellViewModels[0]
                 expect(testCellViewModel.name).to(equal("Jesse Pinkman"))
                 expect(testCellViewModel.imageUrl).to(equal("https://url.220px-Jesse_Pinkman2.jpg"))
@@ -40,6 +40,26 @@ class BreakingListViewModelTest: QuickSpec {
               }
           })
           self.waitForExpectations(timeout: 1, handler: nil)
+        }
+        it("should  show a new filtered list when user filtered the appearance") {
+          
+          let extectation = self.expectation(description: "fatch jobs")
+          viewModel?.fetchBadCharacters(completion: { (resultSuccess) in
+              extectation.fulfill()
+              switch resultSuccess {
+              case .success( _):
+              let charecters = viewModel?.fileterCharectersByAppearance([2,3,4])
+              expect(charecters?.count).to(equal(2))
+                
+              //Another filter
+              let anotherCharecters = viewModel?.fileterCharectersByAppearance([1,2,3])
+              expect(anotherCharecters?.count).to(equal(1))
+              default:
+                  break
+              }
+          })
+          self.waitForExpectations(timeout: 1, handler: nil)
+
         }
       }
     }
