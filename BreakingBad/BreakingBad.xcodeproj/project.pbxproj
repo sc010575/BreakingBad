@@ -38,6 +38,9 @@
 		C5A2A51323CA267B00FED4B5 /* FilterViewLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A51223CA267B00FED4B5 /* FilterViewLauncher.swift */; };
 		C5A2A51723CA486C00FED4B5 /* ConnectivityHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A51623CA486C00FED4B5 /* ConnectivityHandler.swift */; };
 		C5A2A51923CA48C700FED4B5 /* ErrorTrigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A51823CA48C700FED4B5 /* ErrorTrigger.swift */; };
+		C5A2A51B23CB1E9900FED4B5 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A51A23CB1E9900FED4B5 /* SearchTableViewController.swift */; };
+		C5A2A51D23CB398D00FED4B5 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A51C23CB398D00FED4B5 /* SearchViewModel.swift */; };
+		C5A2A51F23CB3DFC00FED4B5 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A51E23CB3DFC00FED4B5 /* Observer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +91,9 @@
 		C5A2A51223CA267B00FED4B5 /* FilterViewLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewLauncher.swift; sourceTree = "<group>"; };
 		C5A2A51623CA486C00FED4B5 /* ConnectivityHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityHandler.swift; sourceTree = "<group>"; };
 		C5A2A51823CA48C700FED4B5 /* ErrorTrigger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTrigger.swift; sourceTree = "<group>"; };
+		C5A2A51A23CB1E9900FED4B5 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		C5A2A51C23CB398D00FED4B5 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		C5A2A51E23CB3DFC00FED4B5 /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 		F2C6EDECDE7A17C621BA5D43 /* Pods-BreakingBadTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadTests.release.xcconfig"; path = "Target Support Files/Pods-BreakingBadTests/Pods-BreakingBadTests.release.xcconfig"; sourceTree = "<group>"; };
 		F58CE42E2B68B41517CE9B21 /* Pods-BreakingBadTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadTests.debug.xcconfig"; path = "Target Support Files/Pods-BreakingBadTests/Pods-BreakingBadTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -211,6 +217,7 @@
 				C5A2A50523C8B1AB00FED4B5 /* BreakingBadDetailViewController.swift */,
 				C5A2A51223CA267B00FED4B5 /* FilterViewLauncher.swift */,
 				C5A2A51823CA48C700FED4B5 /* ErrorTrigger.swift */,
+				C5A2A51A23CB1E9900FED4B5 /* SearchTableViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -220,6 +227,8 @@
 			children = (
 				C59E444823C7C25200D3F8C2 /* BreakingListViewModel.swift */,
 				C5A2A50723C9049E00FED4B5 /* BreakingBadDetailViewModel.swift */,
+				C5A2A51C23CB398D00FED4B5 /* SearchViewModel.swift */,
+				C5A2A51E23CB3DFC00FED4B5 /* Observer.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -474,8 +483,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C56AE22723C755B500064A31 /* BreakingListViewController.swift in Sources */,
+				C5A2A51F23CB3DFC00FED4B5 /* Observer.swift in Sources */,
+				C5A2A51B23CB1E9900FED4B5 /* SearchTableViewController.swift in Sources */,
 				C5A2A51723CA486C00FED4B5 /* ConnectivityHandler.swift in Sources */,
 				C5A2A51123CA088F00FED4B5 /* UIBarButtonItem+size.swift in Sources */,
+				C5A2A51D23CB398D00FED4B5 /* SearchViewModel.swift in Sources */,
 				C5A2A51323CA267B00FED4B5 /* FilterViewLauncher.swift in Sources */,
 				C59E445523C87DD000D3F8C2 /* BreakingBadCell.swift in Sources */,
 				C59E444923C7C25200D3F8C2 /* BreakingListViewModel.swift in Sources */,

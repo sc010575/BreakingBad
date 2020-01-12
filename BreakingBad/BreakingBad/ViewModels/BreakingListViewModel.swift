@@ -13,6 +13,12 @@ struct BreakingListCellViewModel {
   let imageUrl: String
   let charId: Int
 
+  static func emptyCellViewModel() -> BreakingListCellViewModel {
+    return BreakingListCellViewModel(name: "", imageUrl: "", charId: 0)
+  }
+}
+
+extension BreakingListCellViewModel {
   init(_ character: Character) {
     self.name = character.name
     self.imageUrl = character.img
@@ -28,12 +34,12 @@ protocol BreakingListViewModelUseCase {
   func itemAtIndexPath(_ index: Int)
   func fileterCharectersByAppearance(_ appearance: [Int]) -> [BreakingListCellViewModel]
   func loadAllCharecters() -> [BreakingListCellViewModel]
-
-}
+  func performSearch(cellViewModels: [BreakingListCellViewModel]) }
 
 protocol BreakingListViewModelCoordinatorDelegate: class
 {
   func BreakingListViewModelDidSelect(_ viewModel: BreakingListViewModel, character: Character)
+  func BreakingListSearchButtonDidSelected(_ viewModel: BreakingListViewModel, cellViewModels: [BreakingListCellViewModel])
 }
 
 final class BreakingListViewModel: BreakingListViewModelUseCase {
@@ -71,10 +77,10 @@ final class BreakingListViewModel: BreakingListViewModelUseCase {
   }
 
   func fileterCharectersByAppearance(_ appearance: [Int]) -> [BreakingListCellViewModel] {
-    let appearanceString = appearance.map{ String($0)}.joined(separator: "-")
+    let appearanceString = appearance.map { String($0) }.joined(separator: "-")
     var resultCharecters = [Character]()
     characters.forEach { (character) in
-      let appearance = character.appearance.map{String($0)}.joined(separator: "-")
+      let appearance = character.appearance.map { String($0) }.joined(separator: "-")
       if appearance == appearanceString {
         resultCharecters.append(character)
       }
@@ -86,5 +92,9 @@ final class BreakingListViewModel: BreakingListViewModelUseCase {
   func loadAllCharecters() -> [BreakingListCellViewModel] {
     let cellViewModels = characters.map { BreakingListCellViewModel($0) }
     return cellViewModels
+  }
+
+  func performSearch(cellViewModels: [BreakingListCellViewModel]) {
+    delegate?.BreakingListSearchButtonDidSelected(self, cellViewModels: cellViewModels)
   }
 }

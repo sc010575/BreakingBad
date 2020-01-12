@@ -62,14 +62,24 @@ class BreakingListViewController: UIViewController {
   }
 
   private func setupNavigationBar() {
-    let filterButtonItem = UIBarButtonItem.menuButton(self, action: #selector(handleFilter), imageName: "filter-edit", tintColor: .black)
-    navigationItem.rightBarButtonItems = [filterButtonItem]
+    let searchButtomItem = UIBarButtonItem.menuButton(self, action: #selector(handleSearch), imageName: "search_icon", tintColor: .black)
+    
+    let filterButtonItem = UIBarButtonItem.menuButton(self, action: #selector(handleFilter), imageName: "filter-edit",size: CGSize(width: 20, height: 20), tintColor: .black)
+    navigationItem.rightBarButtonItems = [searchButtomItem, filterButtonItem]
   }
 
   @objc func handleFilter() {
        filterLauncher.showFilterView()
   }
-
+  
+  @objc func handleSearch() {
+    viewModel.performSearch(cellViewModels:viewModel.loadAllCharecters())
+  }
+  
+  func updateControllerBySearchResult(_ cellViewModels:[BreakingListCellViewModel]) {
+    badCharecters = cellViewModels
+    collectionView.reloadData()
+  }
 }
 
 
@@ -137,11 +147,8 @@ private extension BreakingListViewController {
     loadingIndicator.color = .gray
     if #available(iOS 13.0, *) {
       loadingIndicator.style = .medium
-    } else {
-      // Fallback on earlier versions
     }
     loadingIndicator.startAnimating();
-
     alert.view.addSubview(loadingIndicator)
     present(alert, animated: true, completion: nil)
   }
