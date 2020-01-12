@@ -143,7 +143,7 @@ extension BreakingListViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView,
     layout collectionViewLayout: UICollectionViewLayout,
     insetForSectionAt section: Int) -> UIEdgeInsets {
-    return UIEdgeInsets.init(top: 8, left: spacing, bottom: 8, right: spacing)
+    return UIEdgeInsets.init(top: 20, left: spacing, bottom: 8, right: spacing)
   }
 }
 
