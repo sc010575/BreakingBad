@@ -8,14 +8,14 @@
 
 import UIKit
 
-class BreakingListViewController: UIViewController {
+class BreakingListViewController: UIViewController, ErrorTrigger {
 
   var viewModel: BreakingListViewModelUseCase!
   private(set) var badCharecters = [BreakingListCellViewModel]()
   private let spacing: CGFloat = 16.0
 
   weak var collectionView: UICollectionView!
-  var alert: UIAlertController!
+  private(set) var alert: UIAlertController!
 
   lazy var filterLauncher: FilterViewLauncher = {
       let fl = FilterViewLauncher()
@@ -37,6 +37,19 @@ class BreakingListViewController: UIViewController {
     loadingView()
   }
 
+  fileprivate func fetchCharecters() {
+    viewModel.fetchBadCharacters { (badResult) in
+      self.removeLoadingView()
+      switch badResult {
+      case .success(let results):
+        self.badCharecters = results
+        self.collectionView.reloadData()
+      case .failure( _):
+        self.displayErrorMessage(error: ErrorMessage.fallbackGenericErrorMessage)
+      }
+    }
+  }
+  
   private func setupViews() {
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -49,23 +62,15 @@ class BreakingListViewController: UIViewController {
       ])
     self.collectionView = collectionView
     self.collectionView.register(BreakingBadCell.self, forCellWithReuseIdentifier: "BreakingBadCell")
-    viewModel.fetchBadCharacters { (badResult) in
-      self.removeLoadingView()
-      switch badResult {
-      case .success(let results):
-        self.badCharecters = results
-        self.collectionView.reloadData()
-      case .failure(let appError):
-        print(appError.localizedDescription)
-      }
-    }
+    fetchCharecters()
   }
 
   private func setupNavigationBar() {
-    let searchButtomItem = UIBarButtonItem.menuButton(self, action: #selector(handleSearch), imageName: "search_icon", tintColor: .black)
-    
-    let filterButtonItem = UIBarButtonItem.menuButton(self, action: #selector(handleFilter), imageName: "filter-edit",size: CGSize(width: 20, height: 20), tintColor: .black)
-    navigationItem.rightBarButtonItems = [searchButtomItem, filterButtonItem]
+    let searchButtomItem = UIBarButtonItem.menuButton(self, action: #selector(handleSearch), imageName: "search_icon", tintColor: .white)
+    let filterButtonItem = UIBarButtonItem.menuButton(self, action: #selector(handleFilter), imageName: "filter-edit",size: CGSize(width: 20, height: 20), tintColor: .white)
+    let refreshButtomItem = UIBarButtonItem.menuButton(self, action: #selector(handleRefresh), imageName: "refresh", size: CGSize(width: 20, height: 20), tintColor: .white)
+
+    navigationItem.rightBarButtonItems = [searchButtomItem, filterButtonItem, refreshButtomItem]
   }
 
   @objc func handleFilter() {
@@ -74,6 +79,11 @@ class BreakingListViewController: UIViewController {
   
   @objc func handleSearch() {
     viewModel.performSearch(cellViewModels:viewModel.loadAllCharecters())
+  }
+  
+  @objc func handleRefresh() {
+    loadingView()
+    fetchCharecters()
   }
   
   func updateControllerBySearchResult(_ cellViewModels:[BreakingListCellViewModel]) {

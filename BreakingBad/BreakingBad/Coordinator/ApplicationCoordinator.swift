@@ -21,14 +21,14 @@ class ApplicationCoordinator: Coordinator {
   init(_ window: UIWindow, navController: UINavigationController) {
     self.window = window
     self.presenter = navController
-    self.presenter.navigationBar.prefersLargeTitles = true
+    self.presenter.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
   }
   
   func start() {
     setupReachability()
     window.rootViewController = presenter
-    startBreakingList()
     window.makeKeyAndVisible()
+    startBreakingList()
   }
 
   private func startBreakingList() {

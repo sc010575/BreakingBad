@@ -46,6 +46,7 @@ final class Network: NetworkUseCase {
                     result = .failure(.dataError(message: "Data/Server error"))
                 }
             }
+          
             DispatchQueue.main.async {
                 completion(result)
             }

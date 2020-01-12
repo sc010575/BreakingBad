@@ -33,7 +33,7 @@ class BreakingListViewControllerTest: QuickSpec {
           do { tearDown() }
         }
         it("should have atleast filter button on the navigation bar") {
-          expect(viewControllerOnTest?.navigationItem.rightBarButtonItems?.count).to(equal(2))
+          expect(viewControllerOnTest?.navigationItem.rightBarButtonItems?.count).to(equal(3))
         }
         it("should initiate a collection view") {
           expect(viewControllerOnTest?.collectionView).notTo(beNil())

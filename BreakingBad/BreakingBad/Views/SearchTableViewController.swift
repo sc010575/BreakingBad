@@ -70,6 +70,7 @@ class SearchTableViewController: UITableViewController {
     searchController.searchResultsUpdater = self
     searchController.obscuresBackgroundDuringPresentation = false
     searchController.searchBar.placeholder = "Search by name"
+    searchController.searchBar.tintColor = .white
     navigationItem.searchController = searchController
     definesPresentationContext = true
   }
