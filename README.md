@@ -12,6 +12,14 @@ A list of Breaking Bad characters and their details
 - BreakingBad - Main application target
 - BreakingBadTests - Unit testing target
 
+### Swift libraries 
+- Quick.Nimble - for BDD testing
+- GCDWebServer - for mock server
+- SDWebImage - for image caching
+- ReachabilitySwift - for reachability checking
+[For simpicity I also include all the pod projects in the repo]
+
+
 ### Instruction to run
 - Download/ Clone the project from URL or .Zip
 - open BreakingBad.xcworkspace and run in the simulator or divice
