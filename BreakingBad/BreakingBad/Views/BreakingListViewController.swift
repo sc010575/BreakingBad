@@ -11,7 +11,7 @@ import UIKit
 class BreakingListViewController: UIViewController {
 
   var viewModel: BreakingListViewModelUseCase!
-  private var badCharecters = [BreakingListCellViewModel]()
+  private(set) var badCharecters = [BreakingListCellViewModel]()
   private let spacing: CGFloat = 16.0
 
   weak var collectionView: UICollectionView!
@@ -164,12 +164,3 @@ extension BreakingListViewController : FilterViewLauncherDelegate {
     collectionView.reloadData()
   }
 }
-
-//MARK:- Only for debuging purpose for testing
-#if DEBUG
-  extension BreakingListViewController {
-    public func exposePrivateBadCharecters() -> [BreakingListCellViewModel] {
-      return self.badCharecters
-    }
-  }
-#endif

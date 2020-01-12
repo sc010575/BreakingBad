@@ -41,6 +41,8 @@
 		C5A2A51B23CB1E9900FED4B5 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A51A23CB1E9900FED4B5 /* SearchTableViewController.swift */; };
 		C5A2A51D23CB398D00FED4B5 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A51C23CB398D00FED4B5 /* SearchViewModel.swift */; };
 		C5A2A51F23CB3DFC00FED4B5 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A51E23CB3DFC00FED4B5 /* Observer.swift */; };
+		C5A2A52123CB524800FED4B5 /* SearchTableViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A52023CB524800FED4B5 /* SearchTableViewControllerTest.swift */; };
+		C5A2A52323CB776C00FED4B5 /* SearchViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A52223CB776C00FED4B5 /* SearchViewModelMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +96,8 @@
 		C5A2A51A23CB1E9900FED4B5 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		C5A2A51C23CB398D00FED4B5 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		C5A2A51E23CB3DFC00FED4B5 /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
+		C5A2A52023CB524800FED4B5 /* SearchTableViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewControllerTest.swift; sourceTree = "<group>"; };
+		C5A2A52223CB776C00FED4B5 /* SearchViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewModelMock.swift; path = BreakingBadTests/Mock/SearchViewModelMock.swift; sourceTree = SOURCE_ROOT; };
 		F2C6EDECDE7A17C621BA5D43 /* Pods-BreakingBadTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadTests.release.xcconfig"; path = "Target Support Files/Pods-BreakingBadTests/Pods-BreakingBadTests.release.xcconfig"; sourceTree = "<group>"; };
 		F58CE42E2B68B41517CE9B21 /* Pods-BreakingBadTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadTests.debug.xcconfig"; path = "Target Support Files/Pods-BreakingBadTests/Pods-BreakingBadTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -247,6 +251,7 @@
 			children = (
 				C59E444023C787A200D3F8C2 /* Fixture */,
 				C59E443E23C7876D00D3F8C2 /* NetworkMock.swift */,
+				C5A2A52223CB776C00FED4B5 /* SearchViewModelMock.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 				C5A2A50A23C9E86800FED4B5 /* BreakingBadDetailViewControllerTest.swift */,
 				C5A2A50C23C9EB3A00FED4B5 /* Viewcontroller+Test.swift */,
 				C5A2A50E23C9F15D00FED4B5 /* BreakingListViewControllerTest.swift */,
+				C5A2A52023CB524800FED4B5 /* SearchTableViewControllerTest.swift */,
 			);
 			path = ViewControllerTest;
 			sourceTree = "<group>";
@@ -511,7 +517,9 @@
 			files = (
 				C59E443F23C7876D00D3F8C2 /* NetworkMock.swift in Sources */,
 				C59E444C23C856CA00D3F8C2 /* BreakingListViewModelTest.swift in Sources */,
+				C5A2A52323CB776C00FED4B5 /* SearchViewModelMock.swift in Sources */,
 				C59E444223C787B300D3F8C2 /* Fixture.swift in Sources */,
+				C5A2A52123CB524800FED4B5 /* SearchTableViewControllerTest.swift in Sources */,
 				C59E444523C7883000D3F8C2 /* CharacterTest.swift in Sources */,
 				C5A2A50D23C9EB3A00FED4B5 /* Viewcontroller+Test.swift in Sources */,
 				C5A2A50B23C9E86800FED4B5 /* BreakingBadDetailViewControllerTest.swift in Sources */,

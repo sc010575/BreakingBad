@@ -12,8 +12,8 @@ class SearchTableViewController: UITableViewController {
 
   var viewModel: SearchViewModelUseCase!
 
-  private var badCharecters = [BreakingListCellViewModel]()
-  private var filteredBadCharecters = [BreakingListCellViewModel]()
+  private(set) var badCharecters = [BreakingListCellViewModel]()
+  private(set) var filteredBadCharecters = [BreakingListCellViewModel]()
 
   private let searchController = UISearchController(searchResultsController: nil)
 
@@ -41,10 +41,6 @@ class SearchTableViewController: UITableViewController {
   }
 
   // MARK: - Table view data source
-
-  override func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
-  }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return isFiltering ? filteredBadCharecters.count : badCharecters.count

@@ -42,8 +42,8 @@ class BreakingListViewControllerTest: QuickSpec {
           expect(viewControllerOnTest?.title).to(equal("Breaking Bad"))
         }
         it("should populate the cell viewmodel list") {
-          expect(viewControllerOnTest?.exposePrivateBadCharecters().count).toEventually(equal(7))
-          let cellViewModelToTest = viewControllerOnTest?.exposePrivateBadCharecters()[0]
+          expect(viewControllerOnTest?.badCharecters.count).toEventually(equal(7))
+          let cellViewModelToTest = viewControllerOnTest?.badCharecters[0]
           expect(cellViewModelToTest?.name).toEventually(equal("Jesse Pinkman"))
         }
       }
