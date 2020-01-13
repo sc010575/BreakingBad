@@ -1,6 +1,9 @@
 # BreakingBad
 A list of Breaking Bad characters and their details
 
+![MainScreen](https://user-images.githubusercontent.com/1453658/72247531-f825c400-35ec-11ea-97ea-84853f3c9639.png)
+
+
 ### Api Links
 - https://breakingbadapi.com/api/characters
 
