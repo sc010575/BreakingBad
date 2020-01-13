@@ -31,7 +31,7 @@ A list of Breaking Bad characters and their details
 - Universal App that support different layouts for iPhone and iPad in horizental and vertical orientation.
 
 ### Code Coverage
-- Current code coverage is 85%
+- Current code coverage is 85.5%
 
 ### Features
 - After launching the application it will make an api call to retrive A list of Breaking Bad characters
