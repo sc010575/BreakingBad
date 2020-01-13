@@ -34,7 +34,9 @@ protocol BreakingListViewModelUseCase {
   func itemAtIndexPath(_ index: Int)
   func fileterCharectersByAppearance(_ appearance: [Int]) -> [BreakingListCellViewModel]
   func loadAllCharecters() -> [BreakingListCellViewModel]
-  func performSearch(cellViewModels: [BreakingListCellViewModel]) }
+  func performSearch(cellViewModels: [BreakingListCellViewModel])
+  
+}
 
 protocol BreakingListViewModelCoordinatorDelegate: class
 {
