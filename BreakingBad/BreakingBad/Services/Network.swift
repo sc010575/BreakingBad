@@ -9,51 +9,43 @@
 import Foundation
 
 enum AppError: Error {
-    case networkError(message: String)
-    case dataError(message: String)
-    case jsonError(message: String)
+  case networkError(message: String)
+  case dataError(message: String)
+  case jsonError(message: String)
 }
 
-
-enum AppConstant {
-    static let BaseUrl = "https://breakingbadapi.com/api/characters"
-}
 
 protocol NetworkUseCase {
-    typealias ResultType = Result<Data, AppError>
-    func send(url: String, completion: @escaping (ResultType) -> Void)
+  typealias ResultType = Result<Data, AppError>
+  func send(url: URL, completion: @escaping (ResultType) -> Void)
 }
 
 final class Network: NetworkUseCase {
-    func send(url: String, completion: @escaping (ResultType) -> Void) {
+  func send(url: URL, completion: @escaping (ResultType) -> Void) {
+    let finalUrl = url.appendingPathComponent(Constant.api)
+    let configuration = URLSessionConfiguration.default
+    let session = URLSession(configuration: configuration)
+    let task = session.dataTask(with: finalUrl) { (data, response, error) in
+      var result: ResultType
+      if let error = error {
+        result = .failure(.networkError(message: error.localizedDescription))
+      } else {
 
-        guard let baseUrl = URL(string: url) else { return completion(.failure(.dataError(message: "Url is not correct")))
-
+        if let httpResponse = response as? HTTPURLResponse, let data = data,
+          200..<299 ~= httpResponse.statusCode {
+          result = .success(data)
+        } else {
+          result = .failure(.dataError(message: "Data/Server error"))
         }
+      }
 
-        let configuration = URLSessionConfiguration.default
-        let session = URLSession(configuration: configuration)
-        let task = session.dataTask(with: baseUrl) { (data, response, error) in
-            var result: ResultType
-            if let error = error {
-                result = .failure(.networkError(message: error.localizedDescription))
-            } else {
+      DispatchQueue.main.async {
+        completion(result)
+      }
 
-                if let httpResponse = response as? HTTPURLResponse, let data = data,
-                  200..<299 ~= httpResponse.statusCode {
-                    result = .success(data)
-                } else {
-                    result = .failure(.dataError(message: "Data/Server error"))
-                }
-            }
-          
-            DispatchQueue.main.async {
-                completion(result)
-            }
-
-        }
-        task.resume()
     }
+    task.resume()
+  }
 }
 
 

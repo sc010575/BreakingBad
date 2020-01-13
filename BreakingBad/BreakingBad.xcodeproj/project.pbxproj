@@ -46,6 +46,9 @@
 		C5A2A52523CC4C9100FED4B5 /* BreakingListViewModelCoordinatorDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A52423CC4C9100FED4B5 /* BreakingListViewModelCoordinatorDelegateMock.swift */; };
 		C5A2A52723CC5C0600FED4B5 /* FilterViewLauncherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A52623CC5C0600FED4B5 /* FilterViewLauncherTest.swift */; };
 		C5A2A52923CC610800FED4B5 /* FilterViewLauncherDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A52823CC610800FED4B5 /* FilterViewLauncherDelegateMock.swift */; };
+		C5A2A52F23CC6BCA00FED4B5 /* BreakingBadApiServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A52E23CC6BCA00FED4B5 /* BreakingBadApiServiceTest.swift */; };
+		C5A2A53123CC71C200FED4B5 /* MockServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A53023CC71C200FED4B5 /* MockServer.swift */; };
+		C5A2A53423CC72B900FED4B5 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2A53323CC72B900FED4B5 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +107,9 @@
 		C5A2A52423CC4C9100FED4B5 /* BreakingListViewModelCoordinatorDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingListViewModelCoordinatorDelegateMock.swift; sourceTree = "<group>"; };
 		C5A2A52623CC5C0600FED4B5 /* FilterViewLauncherTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewLauncherTest.swift; sourceTree = "<group>"; };
 		C5A2A52823CC610800FED4B5 /* FilterViewLauncherDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewLauncherDelegateMock.swift; sourceTree = "<group>"; };
+		C5A2A52E23CC6BCA00FED4B5 /* BreakingBadApiServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakingBadApiServiceTest.swift; sourceTree = "<group>"; };
+		C5A2A53023CC71C200FED4B5 /* MockServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockServer.swift; sourceTree = "<group>"; };
+		C5A2A53323CC72B900FED4B5 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		F2C6EDECDE7A17C621BA5D43 /* Pods-BreakingBadTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadTests.release.xcconfig"; path = "Target Support Files/Pods-BreakingBadTests/Pods-BreakingBadTests.release.xcconfig"; sourceTree = "<group>"; };
 		F58CE42E2B68B41517CE9B21 /* Pods-BreakingBadTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BreakingBadTests.debug.xcconfig"; path = "Target Support Files/Pods-BreakingBadTests/Pods-BreakingBadTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,6 +168,7 @@
 		C56AE22123C755B500064A31 /* BreakingBad */ = {
 			isa = PBXGroup;
 			children = (
+				C5A2A53223CC72A400FED4B5 /* Helper */,
 				C56AE24923C7566100064A31 /* Extension */,
 				C56AE24823C7564200064A31 /* ViewModels */,
 				C56AE24723C7563A00064A31 /* Views */,
@@ -180,13 +187,14 @@
 		C56AE23823C755B700064A31 /* BreakingBadTests */ = {
 			isa = PBXGroup;
 			children = (
+				C5A2A52D23CC6B9000FED4B5 /* ServiceTest */,
 				C5A2A50923C9E84200FED4B5 /* ViewControllerTest */,
 				C59E444A23C8568A00D3F8C2 /* ViewModelTest */,
 				C59E444323C7880F00D3F8C2 /* ModelTest */,
 				C59E443D23C7874600D3F8C2 /* Mock */,
 				C59E443B23C785F300D3F8C2 /* character.json */,
-				C56AE23B23C755B700064A31 /* Info.plist */,
 				C59E444623C7965F00D3F8C2 /* empty.json */,
+				C56AE23B23C755B700064A31 /* Info.plist */,
 			);
 			path = BreakingBadTests;
 			sourceTree = "<group>";
@@ -260,6 +268,7 @@
 				C5A2A52223CB776C00FED4B5 /* SearchViewModelMock.swift */,
 				C5A2A52423CC4C9100FED4B5 /* BreakingListViewModelCoordinatorDelegateMock.swift */,
 				C5A2A52823CC610800FED4B5 /* FilterViewLauncherDelegateMock.swift */,
+				C5A2A53023CC71C200FED4B5 /* MockServer.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -298,6 +307,22 @@
 				C5A2A52623CC5C0600FED4B5 /* FilterViewLauncherTest.swift */,
 			);
 			path = ViewControllerTest;
+			sourceTree = "<group>";
+		};
+		C5A2A52D23CC6B9000FED4B5 /* ServiceTest */ = {
+			isa = PBXGroup;
+			children = (
+				C5A2A52E23CC6BCA00FED4B5 /* BreakingBadApiServiceTest.swift */,
+			);
+			path = ServiceTest;
+			sourceTree = "<group>";
+		};
+		C5A2A53223CC72A400FED4B5 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C5A2A53323CC72B900FED4B5 /* Constant.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		E77148AFAD74F9352A2AE26A /* Frameworks */ = {
@@ -511,6 +536,7 @@
 				C56AE24F23C76FE000064A31 /* Network.swift in Sources */,
 				C56AE22323C755B500064A31 /* AppDelegate.swift in Sources */,
 				C5A2A50823C9049E00FED4B5 /* BreakingBadDetailViewModel.swift in Sources */,
+				C5A2A53423CC72B900FED4B5 /* Constant.swift in Sources */,
 				C5A2A50623C8B1AB00FED4B5 /* BreakingBadDetailViewController.swift in Sources */,
 				C5A2A51923CA48C700FED4B5 /* ErrorTrigger.swift in Sources */,
 				C59E445023C86C6E00D3F8C2 /* ApplicationCoordinator.swift in Sources */,
@@ -526,9 +552,11 @@
 			files = (
 				C5A2A52723CC5C0600FED4B5 /* FilterViewLauncherTest.swift in Sources */,
 				C59E443F23C7876D00D3F8C2 /* NetworkMock.swift in Sources */,
+				C5A2A53123CC71C200FED4B5 /* MockServer.swift in Sources */,
 				C59E444C23C856CA00D3F8C2 /* BreakingListViewModelTest.swift in Sources */,
 				C5A2A52323CB776C00FED4B5 /* SearchViewModelMock.swift in Sources */,
 				C59E444223C787B300D3F8C2 /* Fixture.swift in Sources */,
+				C5A2A52F23CC6BCA00FED4B5 /* BreakingBadApiServiceTest.swift in Sources */,
 				C5A2A52123CB524800FED4B5 /* SearchTableViewControllerTest.swift in Sources */,
 				C59E444523C7883000D3F8C2 /* CharacterTest.swift in Sources */,
 				C5A2A52923CC610800FED4B5 /* FilterViewLauncherDelegateMock.swift in Sources */,

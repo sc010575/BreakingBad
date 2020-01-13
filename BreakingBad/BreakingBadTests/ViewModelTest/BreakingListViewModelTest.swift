@@ -32,7 +32,7 @@ class BreakingListViewModelTest: QuickSpec {
         }
         it("should create a valid BreakingListViewModel") {
 
-          let expectation = self.expectation(description: "fatch jobs")
+          let expectation = self.expectation(description: "fatch resultData")
           viewModel?.fetchBadCharacters(completion: { (resultSuccess) in
             expectation.fulfill()
             switch resultSuccess {
@@ -49,7 +49,7 @@ class BreakingListViewModelTest: QuickSpec {
         }
         it("should  show a new filtered list when user filtered the appearance") {
 
-          let expectation = self.expectation(description: "fatch jobs")
+          let expectation = self.expectation(description: "fatch resultData")
           viewModel?.fetchBadCharacters(completion: { (resultSuccess) in
             expectation.fulfill()
             switch resultSuccess {
@@ -69,7 +69,7 @@ class BreakingListViewModelTest: QuickSpec {
         }
 
         it("Should called BreakingListVieewModelCoordinatorDelegate when user pass a charId through itemAtIndexPath") {
-          let expectation = self.expectation(description: "fatch jobs")
+          let expectation = self.expectation(description: "fatch resultData")
           viewModel?.fetchBadCharacters(completion: { (resultSuccess) in
             expectation.fulfill()
             switch resultSuccess {
@@ -87,7 +87,7 @@ class BreakingListViewModelTest: QuickSpec {
         }
         it("should called BreakingListSearchButtonDidSelected when serch will perform") {
 
-          let expectation = self.expectation(description: "fatch jobs")
+          let expectation = self.expectation(description: "fatch resultData")
           viewModel?.fetchBadCharacters(completion: { (resultSuccess) in
             expectation.fulfill()
             switch resultSuccess {

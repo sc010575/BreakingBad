@@ -22,7 +22,10 @@ final class BreakingBadApiService: BreakingBadApiServiceUseCase {
   }
 
   func retrieveModel(completion: @escaping (ResulType) -> Void) {
-    self.network.send(url: AppConstant.BaseUrl) { (networkResult) in
+    guard let baseUrl = Constant.baseURL else { return completion(.failure(.dataError(message: "Url is not correct")))
+
+    }
+    self.network.send(url: baseUrl) { (networkResult) in
       DispatchQueue.global(qos: .userInitiated).async {
         var serviceResult: ResulType
         switch networkResult {

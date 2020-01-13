@@ -11,7 +11,7 @@ import Foundation
 @testable import BreakingBad
 
 class NetworkMock: NetworkUseCase {
-    func send(url: String, completion: @escaping (ResultType) -> Void) {
+    func send(url: URL, completion: @escaping (ResultType) -> Void) {
         guard let modelToTestData = Fixture.getData("character") else { return }
         completion(.success(modelToTestData))
     }
